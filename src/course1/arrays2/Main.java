@@ -35,13 +35,13 @@ public class Main {
         //в формате: «Минимальная сумма трат за день составила … рублей. Максимальная сумма трат за день составила … рублей».
 
         int[] arr = generateRandomArray();
-        int minExpense = 200_001;
+        int minExpense = -1;
         int maxExpense = -1;
         for (int j : arr) {
             if (j > maxExpense) {
                 maxExpense = j;
             }
-            if (j < minExpense) {
+            if (j < maxExpense) {
                 minExpense = j;
             }
         }
@@ -59,7 +59,7 @@ public class Main {
         for (int j : arr) {
             sum += j;
         }
-        double averageSum = sum / arr.length - 1;
+        double averageSum = sum / arr.length;
         System.out.printf("Средняя сумма трат за месяц составила %.2f рублей", averageSum);
         System.out.println();
     }
