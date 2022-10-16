@@ -35,13 +35,13 @@ public class Main {
         //в формате: «Минимальная сумма трат за день составила … рублей. Максимальная сумма трат за день составила … рублей».
 
         int[] arr = generateRandomArray();
-        int minExpense = -1;
+        int minExpense = arr[0];
         int maxExpense = -1;
         for (int j : arr) {
             if (j > maxExpense) {
                 maxExpense = j;
             }
-            if (j < maxExpense) {
+            if (j <= minExpense) {
                 minExpense = j;
             }
         }
@@ -83,5 +83,7 @@ public class Main {
             System.out.print(reverseFullName[newIndex]);
         }
         System.out.println();
+        // for (int i = reverseFullName.length - 1; i >= 0; i--);
+        // System.out.print(reverseFullName[i]);
     }
 }
